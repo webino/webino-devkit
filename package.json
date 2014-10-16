@@ -1,0 +1,46 @@
+{
+    "name": "webino-devkit",
+    "description": "Webino Development Kit",
+    "version": "0.0.0",
+    "author": "Peter Bačinský, Webino, s. r. o. (https://webino.sk/)",
+    "homepage": "https://webino.sk/",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/webino/webino-devkit.git"
+    },
+    "bugs": {
+        "url": "http://github.com/webino/webino-devkit/issues"
+    },
+    "licenses": [
+        {
+            "type": "BSD-3-Clause",
+            "url": "http://github.com/webino/webino-devkit/blob/develop/LICENSE"
+        }
+    ],
+    "bin": {
+        "webino": "./bin/webino"
+    },
+    "main": "lib/webino-devkit",
+    "scripts": {
+        "postinstall": "webino self_setup"
+    },
+    "engines": {
+        "node": ">= 0.8.0"
+    },
+    "keywords": ["webino", "development", "kit"],
+    "dependencies": {
+        "grunt": "0.4.*",
+        "grunt-exec": "0.4.*",
+        "grunt-mkdir": "0.1.*",
+        "grunt-phplint": "0.0.*",
+        "grunt-phpunit": "0.3.*",
+        "grunt-phpcs": "0.2.*",
+        "grunt-phpmd": "0.1.*",
+        "grunt-phpcpd": "0.1.*",
+        "grunt-todos": "0.3.*",
+        "grunt-properties-reader": "0.1.*",
+        "grunt-browser-sync": "1.3.*",
+        "grunt-contrib-watch": "0.6.*",
+        "grunt-contrib-clean": "0.6.*"
+    }
+}

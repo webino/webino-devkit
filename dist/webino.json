@@ -1,0 +1,10 @@
+{
+    "github": {
+        "user": "CHANGEME"
+    },
+    "authentication": {
+        "identity": "CHANGEME",
+        "credential": "CHANGEME"
+    },
+    "modules": []
+}
