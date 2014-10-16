@@ -9,6 +9,6 @@ module.exports = function(grunt) {
     }
 
     grunt.config.init((function () {
-        return require(__dirname + '/lib/webino-devkit');
+        return require('webino-devkit');
     })().config(grunt, ['global']));
 };
