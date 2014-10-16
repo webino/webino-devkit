@@ -1,7 +1,7 @@
 {
     "name": "webino-devkit",
     "description": "Webino Development Kit",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "author": "Peter Bačinský, Webino, s. r. o. (https://webino.sk/)",
     "homepage": "https://webino.sk/",
     "repository": {
@@ -30,6 +30,7 @@
     "keywords": ["webino", "development", "kit"],
     "dependencies": {
         "grunt": "0.4.*",
+        "grunt-cli": "0.1.*",
         "grunt-exec": "0.4.*",
         "grunt-mkdir": "0.1.*",
         "grunt-phplint": "0.0.*",
