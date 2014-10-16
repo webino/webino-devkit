@@ -4,10 +4,7 @@ Application and module development toolkit for Webino developers.
 
 ## Requirements
 
-- Latest stable [Node.js](http://nodejs.org/) <br />
-- Properly configured environment variables
-
-*NOTE: Consider to use a [nvm](https://github.com/creationix/nvm) `nvm install 0.10` to install Node.js.*
+- Latest stable [Node.js](http://nodejs.org/)
 
 ## Installation
 
