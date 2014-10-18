@@ -6,6 +6,8 @@ Application and module development toolkit for Webino developers.
 
 - Latest stable [Node.js](http://nodejs.org/)
 
+*NOTE: Consider to use a [nvm](https://github.com/creationix/nvm) e.g. `nvm install 0.10` to install Node.js.*
+
 ## Installation
 
 `sudo npm install webino-devkit -g`
