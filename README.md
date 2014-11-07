@@ -16,6 +16,10 @@ Application and module development toolkit for Webino developers.
 
 `webino`
 
+## TODO
+
+- Add webino-generator module
+
 ## More informations
 
 Read more on [How to develop Webino modules](https://github.com/webino/Webino/wiki/How-to-develop-Webino-modules)

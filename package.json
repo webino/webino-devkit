@@ -1,7 +1,7 @@
 {
     "name": "webino-devkit",
     "description": "Webino Development Kit",
-    "version": "0.1.12",
+    "version": "0.1.13",
     "author": "Peter Bačinský, Webino, s. r. o. (https://webino.sk/)",
     "homepage": "https://webino.sk/",
     "repository": {
@@ -39,9 +39,11 @@
         "grunt-phpmd": "0.1.*",
         "grunt-phpcpd": "0.1.*",
         "grunt-todos": "0.3.*",
-        "grunt-properties-reader": "0.1.*",
+        "grunt-wait-async": "0.1.*",
         "grunt-browser-sync": "1.3.*",
         "grunt-contrib-watch": "0.6.*",
-        "grunt-contrib-clean": "0.6.*"
+        "grunt-contrib-clean": "0.6.*",
+        "grunt-contrib-copy": "0.7.*",
+        "priorityqueuejs": "0.2.*"
     }
 }
