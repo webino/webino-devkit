@@ -10,7 +10,9 @@ Application and module development toolkit for Webino developers.
 
 ## Installation
 
-`sudo npm install webino-devkit -g`
+`sudo npm install webino-devkit -g --unsafe-perm`
+
+*NOTE: We use the `--unsafe-perm` flag allowing post-install of required PHP libraries.*
 
 ## Usage
 
