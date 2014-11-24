@@ -1,7 +1,7 @@
 {
     "name": "webino-devkit",
     "description": "Webino Development Kit",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "author": "Peter Bačinský, Webino, s. r. o. (https://webino.sk/)",
     "homepage": "https://webino.sk/",
     "repository": {
@@ -44,6 +44,8 @@
         "grunt-contrib-watch": "0.6.*",
         "grunt-contrib-clean": "0.6.*",
         "grunt-contrib-copy": "0.7.*",
+        "grunt-concurrent": "1.*",
+        "grunt-gh-pages": "0.9.*",
         "priorityqueuejs": "0.2.*"
     }
 }
