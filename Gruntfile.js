@@ -1,9 +1,9 @@
 module.exports = function(grunt) {
-    var working_dir = grunt.option('working-dir');
-    var moduleGruntFile = working_dir + '/Gruntfile.js';
+    var workingDir = grunt.option('working-dir');
+    var moduleGruntFile = workingDir + '/Gruntfile.js';
     if (grunt.file.exists(moduleGruntFile)) {
         (function () {
-            return require(working_dir + '/Gruntfile.js');
+            return require(workingDir + '/Gruntfile.js');
         })()(grunt);
         return;
     }

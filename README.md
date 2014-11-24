@@ -6,13 +6,21 @@ Application and module development toolkit for Webino developers.
 
 - Latest stable [Node.js](http://nodejs.org/)
 
+*NOTE: Consider to use a [nvm](https://github.com/creationix/nvm) e.g. `nvm install 0.10` to install Node.js.*
+
 ## Installation
 
-`sudo npm install webino-devkit -g`
+`sudo npm install webino-devkit -g --unsafe-perm`
+
+*NOTE: We use the `--unsafe-perm` flag allowing post-install of required PHP libraries.*
 
 ## Usage
 
 `webino`
+
+## TODO
+
+- Add webino-generator module
 
 ## More informations
 
