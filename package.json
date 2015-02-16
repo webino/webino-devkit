@@ -18,7 +18,8 @@
         }
     ],
     "bin": {
-        "webino": "bin/webino"
+        "webino": "bin/webino",
+        "selenium": "bin/selenium"
     },
     "main": "lib/webino-devkit",
     "scripts": {
