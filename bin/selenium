@@ -5,8 +5,8 @@
 selenium='java -jar -Xms384m -Xmx384m'
 screen='1680x1050x24+32'
 jar=/var/lib/webino/selenium-server.jar
-lock=/tmp/selenium-port-*.lock
-log=/tmp/selenium.log
+lock=/tmp/selenium/port-*.lock
+log=/tmp/selenium/output.log
 port=${PORT-'4444'}
 no_xvfb=${X-''}
 
@@ -43,7 +43,7 @@ kill_xvfb () {
 # Commands
 
 umask 002
-sg "$(get_group)" -c "touch $log"
+sg "$(get_group)" -c "mkdir -p /tmp/selenium && touch $log"
 
 case "${1:-''}" in
     'port')
