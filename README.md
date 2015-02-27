@@ -1,5 +1,7 @@
 # Webino Development Kit
 
+[![Build Status](https://travis-ci.org/webino/webino-devkit.svg?branch=develop)](https://travis-ci.org/webino/webino-devkit)
+
 Application and module development toolkit for Webino developers.
 
 ## Requirements
