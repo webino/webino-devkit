@@ -4,6 +4,6 @@ node_js:
   - "0.12"
   - "0.13"
 install:
-  - npm install -g --unsafe-perm .
+  - sudo npm install -g --unsafe-perm .
 script:
   - ./tests/bootstrap.sh
