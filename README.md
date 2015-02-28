@@ -4,9 +4,16 @@
 
 Application and module development toolkit for Webino developers.
 
+## Quick Install
+
+`curl http://get.webino.org/devkit -sL | sh`
+
 ## Requirements
 
 - Latest stable [Node.js](http://nodejs.org/)
+- [PHP](http://php.net/) >= 5.4
+- [Git](http://git-scm.com)
+- [Graphviz](http://www.graphviz.org)
 
 *NOTE: Consider to use a [nvm](https://github.com/creationix/nvm) e.g. `nvm install 0.10` to install Node.js.*
 
@@ -20,86 +27,66 @@ Application and module development toolkit for Webino developers.
 
 Run `webino` from the command line.
 
-### Development
+### Module development
 
-Initializing new clone:
+Go to a Webino module directory and run one of the following commands.
 
-`webino init`
+Initializing new clone: `webino init`
 
-updating clone:
+Updating clone: `webino update`
 
-`webino update`
+Environment configuration: `webino configure`
 
-environment configuration:
+Open test site in a web browser: `webino show`
 
-`webino configure`
+Live development (browser-sync & watch): `webino dev`
 
-Open test site in a web browser:
-
-`webino show`
-
-Live development (browser-sync & watch):
-
-`webino dev`
-
-assets regeneration:
-
-`webino regen`
+Assets regeneration: `webino regen`
 
 ### Testing
 
-*Unit & Functional testing*
+**Unit & Functional testing**
 
-PHPUnit:
+PHPUnit: `webino phpunit`
 
-`webino phpunit`
+using filter: `webino phpunit --filter testMyExampleMethod`
 
-with filter:
+With functional tests & violations check: `webino test`
 
-`webino phpunit --filter testMyExampleMethod`
+using filter: `webino test --filter testMyExampleMethod`
 
-with functional tests & violations check:
+**Acceptance testing**
 
-`webino test`
+Selenium: `webino uat:<browser> -uri http://localhost:8080/`
 
-with filter:
-
-`webino test --filter testMyExampleMethod`
-
-*Acceptance testing*
-
-`webino uat:<browser> -uri http://localhost:8080/`
-
-use environment variables instead:
+using environment variables instead:
 
 `BROWSER=<browser> URI=http://localhost:8080/ webino uat`
 
-*NOTE: Replace the `<browser>` with any supported selenium browser: htmlunit, firefox, chrome, ...*
+*NOTE: Replace the `<browser>` with any supported Selenium browser: htmlunit, firefox, chrome, ...*
 *NOTE: Location of the testing site could be any than `http://localhost:8080/`.*
 
 ### Analysis
 
-*Analyze package source, generate logs, todos etc.*
+**Analyze package source, generate logs, todos etc.**
 
 `webino analyze`
 
 ### Documentation generator
 
-*API*
+**API**
 
-`webino api`
+Generate API doc: `webino api`
 
-open API in a web browser:
-
-`webino show-api`
+Open API in a web browser: `webino show-api`
 
 ### Package distribution
-
-*GitHub*
 
 Publish new module to a remote repository:
 
 `webino publish`
+
+*NOTE: It initializes local Git with GitFlow and then pushes to the newly created GitHub repository.*
 
 ## TODO
 
