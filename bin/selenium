@@ -63,9 +63,9 @@ case "${1:-''}" in
         if [[ -z $no_xvfb ]]; then
             display=':'$port
             echo 'With Xvfb '$display
-            DISPLAY=$display xvfb-run --auto-servernum --server-num=$port --server-args='-screen 0 '$screen $selenium &>> $log &
+            DISPLAY=$display xvfb-run --auto-servernum --server-num=$port --server-args='-screen 0 '$screen $selenium &> $log &
         else
-            $selenium &>> $log &
+            $selenium &> $log &
             display=:0
         fi
 
