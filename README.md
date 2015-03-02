@@ -12,7 +12,7 @@ Application and module development toolkit for Webino developers.
 
 - Latest stable [Node.js](http://nodejs.org/)
 - [PHP](http://php.net/) >= 5.4
-- [Git](http://git-scm.com)
+- [Git](http://git-scm.com) & [GitFlow](https://github.com/nvie/gitflow)
 - [Graphviz](http://www.graphviz.org)
 
 *NOTE: Consider to use a [nvm](https://github.com/creationix/nvm) e.g. `nvm install 0.10` to install Node.js.*
