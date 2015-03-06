@@ -6,7 +6,7 @@ php:
 before_install:
   - curl -sL https://deb.nodesource.com/setup | sudo bash -
   - sudo apt-get install -y nodejs
-  - sudo pecl install mailparse
+  - pecl install mailparse
 install:
   - sudo npm install -g --unsafe-perm .
   - sudo rm -rf ~/.composer/cache
