@@ -94,7 +94,7 @@ Open API in a web browser
 
 ### Package distribution
 
-Publish new module to a remote repository:
+Publish new module to a remote repository
 - `webino publish`
 
 *NOTE: It initializes local Git with GitFlow and then pushes to the newly created GitHub repository.*
