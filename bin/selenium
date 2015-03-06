@@ -2,12 +2,11 @@
 
 # Options
 
-selenium='java -jar -Xms384m -Xmx384m'
+selenium='java -jar -Xms256m -Xmx256m'
 screen='1680x1050x24+32'
 jar=/var/lib/webino/selenium-server.jar
-lock=/tmp/selenium-port-*.lock
-log=/tmp/selenium-output.log
-err=/tmp/selenium-error.log
+lock=/tmp/selenium/port-*.lock
+log=/tmp/selenium/port-*.log
 port=${PORT-'4444'}
 no_xvfb=${X-''}
 
@@ -27,6 +26,14 @@ lock_file () {
     echo $(echo "$lock" | sed 's/\*/'$port'/g')
 }
 
+log_file () {
+    echo $(echo "$log" | sed 's/\*/'$port'/g')
+}
+
+get_group () {
+    [ "$(groups | grep selenium)" ] && echo 'selenium' || echo "$(id -gn)"
+}
+
 stop_selenium () {
     # Kills selenium on a specified port
     kill $(ps aux | grep '[s]elenium-server.jar -port '$port | awk '{print $2}') 2> /dev/null
@@ -39,13 +46,16 @@ kill_xvfb () {
 
 # Commands
 
+umask 002
+sg "$(get_group)" -c "mkdir -p /tmp/selenium"
+
 case "${1:-''}" in
     'port')
         # Returns available port for selenium webdriver
         while [[ -f $(lock_file) ]]; do
             port='44'$((RANDOM % 10))''$((RANDOM % 10))
         done
-        touch $(lock_file)
+        sg "$(get_group)" -c "touch $(lock_file)"
         echo $port
         exit 0
     ;;
@@ -53,13 +63,14 @@ case "${1:-''}" in
         echo "Starting Selenium on port $port..."
         stop_selenium
 
-        selenium=$selenium" $jar -port $port"
+        selenium=$selenium" $jar -host 127.0.0.1 -port $port"
+        sg "$(get_group)" -c "touch $(log_file)"
         if [[ -z $no_xvfb ]]; then
             display=':'$port
             echo 'With Xvfb '$display
-            DISPLAY=$display xvfb-run --auto-servernum --server-num=$port --server-args='-screen 0 '$screen $selenium > $log 2> $err &
+            DISPLAY=$display xvfb-run --auto-servernum --server-num=$port --server-args='-screen 0 '$screen $selenium &> "$(log_file)" &
         else
-            $selenium > $log 2> $err &
+            $selenium &> "$(log_file)" &
             display=:0
         fi
 
@@ -88,6 +99,7 @@ case "${1:-''}" in
         kill $(ps aux | grep '[s]elenium-server.jar' | awk '{print $2}') 2> /dev/null
         kill_xvfb
         rm -f $lock
+        rm -f $log
         exit 0
     ;;
     *)
