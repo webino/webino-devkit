@@ -5,7 +5,7 @@ php:
   - 5.6
 before_install:
   - curl -sL https://deb.nodesource.com/setup | sudo bash -
-  - sudo apt-get install -y nodejs
+  - sudo apt-get install -y nodejs graphviz
   - pecl install mailparse
 install:
   - sudo npm install -g --unsafe-perm .
