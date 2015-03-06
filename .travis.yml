@@ -9,4 +9,4 @@ before_install:
 install:
   - sudo npm install -g --unsafe-perm .
 script:
-  - ./tests/bootstrap.sh
+  - ./tests/bootstrap
