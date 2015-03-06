@@ -2,11 +2,11 @@
 
 # Options
 
-selenium='java -jar -Xms384m -Xmx384m'
+selenium='java -jar -Xms256m -Xmx256m'
 screen='1680x1050x24+32'
 jar=/var/lib/webino/selenium-server.jar
 lock=/tmp/selenium/port-*.lock
-lock=/tmp/selenium/port-*.log
+log=/tmp/selenium/port-*.log
 port=${PORT-'4444'}
 no_xvfb=${X-''}
 
@@ -63,7 +63,8 @@ case "${1:-''}" in
         echo "Starting Selenium on port $port..."
         stop_selenium
 
-        selenium=$selenium" $jar -port $port"
+        selenium=$selenium" $jar -host 127.0.0.1 -port $port"
+        sg "$(get_group)" -c "touch $(log_file)"
         if [[ -z $no_xvfb ]]; then
             display=':'$port
             echo 'With Xvfb '$display
@@ -98,6 +99,7 @@ case "${1:-''}" in
         kill $(ps aux | grep '[s]elenium-server.jar' | awk '{print $2}') 2> /dev/null
         kill_xvfb
         rm -f $lock
+        rm -f $log
         exit 0
     ;;
     *)
