@@ -6,6 +6,7 @@ selenium='java -jar -Xms384m -Xmx384m'
 screen='1680x1050x24+32'
 jar=/var/lib/webino/selenium-server.jar
 lock=/tmp/selenium/port-*.lock
+lock=/tmp/selenium/port-*.log
 port=${PORT-'4444'}
 no_xvfb=${X-''}
 
@@ -23,6 +24,10 @@ help () {
 
 lock_file () {
     echo $(echo "$lock" | sed 's/\*/'$port'/g')
+}
+
+log_file () {
+    echo $(echo "$log" | sed 's/\*/'$port'/g')
 }
 
 get_group () {
@@ -62,9 +67,9 @@ case "${1:-''}" in
         if [[ -z $no_xvfb ]]; then
             display=':'$port
             echo 'With Xvfb '$display
-            DISPLAY=$display xvfb-run --auto-servernum --server-num=$port --server-args='-screen 0 '$screen $selenium &
+            DISPLAY=$display xvfb-run --auto-servernum --server-num=$port --server-args='-screen 0 '$screen $selenium &> "$(log_file)" &
         else
-            $selenium &
+            $selenium &> "$(log_file)" &
             display=:0
         fi
 
