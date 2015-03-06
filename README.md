@@ -31,60 +31,71 @@ Run `webino` from the command line.
 
 Go to a Webino module directory and run one of the following commands.
 
-Initializing new clone: `webino init`
+Initializing new clone
+- `webino init`
 
-Updating clone: `webino update`
+Updating clone
+- `webino update`
 
-Environment configuration: `webino configure`
+Environment configuration
+- `webino configure`
 
-Open test site in a web browser: `webino show`
+Open test site in a web browser
+- `webino show`
 
-Live development (browser-sync & watch): `webino dev`
+Live development (browser-sync & watch)
+- `webino dev`
 
-Assets regeneration: `webino regen`
+Assets regeneration
+- `webino regen`
 
 ### Testing
 
 **Unit & Functional testing**
 
-PHPUnit: `webino phpunit`
+PHPUnit
+- `webino phpunit`
 
-using filter: `webino phpunit --filter testMyExampleMethod`
+using filter
+- `webino phpunit --filter testMyExampleMethod`
 
-With functional tests & violations check: `webino test`
+With functional tests & violations check
+- `webino test`
 
-using filter: `webino test --filter testMyExampleMethod`
+using filter
+- `webino test --filter testMyExampleMethod`
 
 **Acceptance testing**
 
-Selenium: `webino uat:<browser> -uri http://localhost:8080/`
+Selenium
+- `webino uat:<browser> -uri http://localhost:8080/`
 
-using environment variables instead:
+using environment variables instead
 
-`BROWSER=<browser> URI=http://localhost:8080/ webino uat`
+- `BROWSER=<browser> URI=http://localhost:8080/ webino uat`
 
 *NOTE: Replace the `<browser>` with any supported Selenium browser: htmlunit, firefox, chrome, ...*
 *NOTE: Location of the testing site could be any than `http://localhost:8080/`.*
 
 ### Analysis
 
-**Analyze package source, generate logs, todos etc.**
-
-`webino analyze`
+Analyze package source, generate logs, todos etc.
+- `webino analyze`
 
 ### Documentation generator
 
 **API**
 
-Generate API doc: `webino api`
+Generate API doc
+- `webino api`
 
-Open API in a web browser: `webino show-api`
+Open API in a web browser
+- `webino show-api`
 
 ### Package distribution
 
 Publish new module to a remote repository:
-
-`webino publish`
+- `webino publish`
 
 *NOTE: It initializes local Git with GitFlow and then pushes to the newly created GitHub repository.*
 
