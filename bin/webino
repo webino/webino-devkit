@@ -6,5 +6,5 @@ node_path=/usr/lib/node_modules
 cd $node_path"/webino-devkit" 2> /dev/null
 [[ $1 =~ ^build$|^build:.*$|^uat.*|^selenium.*$ ]] && \
 export PORT=$(selenium port)
-grunt "$@" -working-dir $working_dir
+grunt "$@" --fix-opts=true --working-dir=$working_dir
 
