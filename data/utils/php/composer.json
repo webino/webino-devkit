@@ -15,6 +15,7 @@
         "exorus/php-mime-mail-parser": "1.*",
         "phpunit/phpunit": "4.*",
         "mikey179/vfsStream": "1.*",
+        "nette/tester": "1.*",
         "smalot/pdfparser": "0.9.*"
     }
 }
