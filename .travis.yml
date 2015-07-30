@@ -3,6 +3,8 @@ php:
   - 5.5
   - 5.6
 before_install:
+  - "echo 'Updating Ubuntu 12.04 wget to 1.14 with SNI' && wget http://ppa.launchpad.net/nathan-renniewaldock/ppa/ubuntu/pool/main/w/wget/wget_1.14-1~ppa1~precise_amd64.deb && sudo dpkg -i wget_1.14-1~ppa1~precise_amd64.deb
+    && sudo apt-get install -f"
   - curl -sL https://deb.nodesource.com/setup | sudo bash -
   - sudo apt-get install -y nodejs graphviz
   - pecl install mailparse
