@@ -23,7 +23,7 @@
     },
     "main": "lib/webino-devkit",
     "scripts": {
-        "postinstall": "grunt setup --stack --debug"
+        "postinstall": "grunt setup"
     },
     "engines": {
         "node": ">=0.10"
