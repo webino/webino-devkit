@@ -6,7 +6,7 @@ Application and module development toolkit for Webino developers.
 
 ## Quick Install
 
-`wget https://get.webino.org/devkit -qO - | sh`
+`wget https://get.webino.org/devkit -qO- | sh`
 
 ## Requirements
 
