@@ -45,7 +45,7 @@
         "grunt-contrib-watch": "0.6.*",
         "grunt-contrib-clean": "0.6.*",
         "grunt-contrib-copy": "0.7.*",
-        "grunt-string-replace": "0.7.*",
+        "grunt-string-replace": "1.*",
         "grunt-concurrent": "1.*",
         "grunt-gh-pages": "0.9.*",
         "priorityqueuejs": "0.2.*"
