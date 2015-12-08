@@ -3,8 +3,12 @@
         "user": "CHANGEME"
     },
     "authentication": {
-        "identity": "CHANGEME",
+        "identity":   "CHANGEME",
         "credential": "CHANGEME"
+    },
+    "database": {
+        "user":     "CHANGEME",
+        "password": "CHANGEME"
     },
     "modules": []
 }

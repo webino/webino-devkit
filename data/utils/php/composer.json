@@ -1,14 +1,23 @@
 {
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.5.1",
         "mayflower/php-codebrowser": "*",
         "pdepend/pdepend": "2.*",
-        "phpdocumentor/phpdocumentor": "dev-develop",
+        "phpdocumentor/phpdocumentor": "2.*",
         "phploc/phploc": "*",
         "phpmd/phpmd": "2.*",
         "satooshi/php-coveralls": "0.*",
         "sebastian/phpcpd": "*",
-        "squizlabs/php_codesniffer": "1.*"
+        "squizlabs/php_codesniffer": "1.*",
+        "allure-framework/allure-phpunit": "1.*",
+        "element-34/php-webdriver": "1.*",
+        "exorus/php-mime-mail-parser": "1.*",
+        "phpunit/phpunit": "4.*",
+        "mikey179/vfsStream": "1.*",
+        "nette/tester": "1.*",
+        "smalot/pdfparser": "0.9.*",
+        "rhumsaa/uuid": "2.7.*"
     }
 }
