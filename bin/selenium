@@ -9,6 +9,7 @@ lock=/tmp/selenium/port-*.lock
 log=/tmp/selenium/port-*.log
 port=${PORT-'4444'}
 no_xvfb=${X-''}
+record=${R-''}
 
 # Functions
 
@@ -83,6 +84,13 @@ case "${1:-''}" in
             sh "$BASH_SOURCE" stop
             exit 1
         fi
+
+        if [[ -z $no_xvfb && -n $record ]]; then
+            # Recording
+            sleep 12 && echo "Recording to "$record \
+                && avconv -f x11grab -b 1024k -s $screen -i :$port -vcodec libx264 -y $record &> /dev/null &
+        fi
+
         exit 0
     ;;
     'stop')
