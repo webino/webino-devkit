@@ -11,7 +11,7 @@ Application and module development toolkit for Webino developers.
 ## Requirements
 
 - Latest stable [Node.js](http://nodejs.org/)
-- [PHP](http://php.net/) >= 5.4
+- [PHP](http://php.net/) >= 5.6
 - [Git](http://git-scm.com) & [GitFlow](https://github.com/nvie/gitflow)
 - [Graphviz](http://www.graphviz.org)
 
@@ -76,6 +76,10 @@ using environment variables instead
 
 *NOTE: Replace the `<browser>` with any supported Selenium browser: htmlunit, firefox, chrome, ...*
 *NOTE: Location of the testing site could be any than `http://localhost:8080/`.*
+
+disable tests video recording
+
+- `R=0 webino uat`
 
 ### Analysis
 
