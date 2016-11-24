@@ -3,13 +3,12 @@
 # Options
 
 selenium='java -jar -Xms256m -Xmx256m'
-screen='1680x1050x24+32'
+screen='1920x1080x24+32'
 jar=/var/lib/webino/selenium-server.jar
 lock=/tmp/selenium/port-*.lock
 log=/tmp/selenium/port-*.log
 port=${PORT-'4444'}
 no_xvfb=${X-''}
-record=${R-''}
 
 # Functions
 
@@ -40,9 +39,21 @@ stop_selenium () {
     kill $(ps aux | grep '[s]elenium-server.jar -port '$port | awk '{print $2}') 2> /dev/null
 }
 
+stop_recording () {
+    # Kills recorder for specified display
+    kill $(ps aux | grep '[r]ecordmydesktop --display=:'$port | awk '{print $2}') 2> /dev/null
+    sleep 1
+}
+
 kill_xvfb () {
     local pid=$(ps aux | grep '[X]vfb' | awk '{print $2}')
     [[ -n $pid ]] && echo 'Stopping Xvfb' && kill $pid 2> /dev/null
+}
+
+kill_recording () {
+    local pid=$(ps aux | grep '[r]ecordmydesktop' | awk '{print $2}')
+    [[ -n $pid ]] && echo 'Stopping recording' && kill $pid 2> /dev/null
+    sleep 1
 }
 
 # Commands
@@ -64,12 +75,13 @@ case "${1:-''}" in
         echo "Starting Selenium on port $port..."
         stop_selenium
 
-        selenium=$selenium" $jar -host 127.0.0.1 -port $port"
+        selenium=$selenium" $jar -port $port -host 127.0.0.1"
         sg "$(get_group)" -c "touch $(log_file)"
         if [[ -z $no_xvfb ]]; then
             display=':'$port
             echo 'With Xvfb '$display
-            DISPLAY=$display xvfb-run --auto-servernum --server-num=$port --server-args='-screen 0 '$screen $selenium &> "$(log_file)" &
+            Xvfb $display -screen 0 $screen &
+            DISPLAY=$display $selenium &> "$(log_file)" &
         else
             $selenium &> "$(log_file)" &
             display=:0
@@ -85,24 +97,23 @@ case "${1:-''}" in
             exit 1
         fi
 
-        if [[ -z $no_xvfb && -n $record ]]; then
-            # Recording
-            sleep 12 && echo "Recording to "$record \
-                && avconv -f x11grab -b 1024k -s $screen -i :$port -vcodec libx264 -y $record &> /dev/null &
-        fi
-
         exit 0
     ;;
     'stop')
+        # Stops recording for specified display
+        stop_recording
+
         # Stops selenium & Xvfb for specified port
         echo "Stopping Selenium on port $port..."
         stop_selenium
         rm -f $(lock_file)
+
         # Stops Xvfb when no selenium is running
         [[ -z $(ls $lock 2> /dev/null) ]] && kill_xvfb
         exit 0
     ;;
     'kill')
+        kill_recording
         # Kill all selenium instances & xvfb
         kill $(ps aux | grep '[s]elenium-server.jar' | awk '{print $2}') 2> /dev/null
         kill_xvfb
