@@ -14,8 +14,19 @@ Application and module development toolkit for Webino developers.
 - [PHP](http://php.net/) >= 5.6
 - [Git](http://git-scm.com) & [GitFlow](https://github.com/nvie/gitflow)
 - [Graphviz](http://www.graphviz.org)
+- RecordMyDesktop (http://recordmydesktop.sourceforge.net/)
 
 *NOTE: Consider to use a [nvm](https://github.com/creationix/nvm) e.g. `nvm install 0.10` to install Node.js.*
+
+## Features
+
+- Package initialization & updating
+- Live front-end development support
+- Source code analysis
+- API generation
+- Testing environment configuration
+- Package unit & acceptance testing
+- Acceptance testing video recording
 
 ## Installation
 
@@ -107,6 +118,6 @@ Publish new module to a remote repository
 
 - Add webino-generator module
 
-## More informations
+## More information
 
 Read more on [How to develop Webino modules](https://github.com/webino/Webino/wiki/How-to-develop-Webino-modules)
