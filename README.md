@@ -14,7 +14,7 @@ Application and module development toolkit for Webino developers.
 - [PHP](http://php.net/) >= 5.6
 - [Git](http://git-scm.com) & [GitFlow](https://github.com/nvie/gitflow)
 - [Graphviz](http://www.graphviz.org)
-- RecordMyDesktop (http://recordmydesktop.sourceforge.net/)
+- [RecordMyDesktop](http://recordmydesktop.sourceforge.net/)
 
 *NOTE: Consider to use a [nvm](https://github.com/creationix/nvm) e.g. `nvm install 0.10` to install Node.js.*
 
