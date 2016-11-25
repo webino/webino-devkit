@@ -120,4 +120,4 @@ Publish new module to a remote repository
 
 ## More information
 
-Read more on [How to develop Webino modules](https://github.com/webino/Webino/wiki/How-to-develop-Webino-modules)
+Read more on [How to develop Webino modules](https://github.com/webino/Webino/wiki/How-to-develop-Webino-module)
