@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/webino/webino-devkit.svg?branch=develop)](https://travis-ci.org/webino/webino-devkit)
 
-Application and module development toolkit for Webino developers. 
+Application and module development toolkit for Webino developers.
 
 ## Quick Install
 
@@ -10,11 +10,13 @@ Application and module development toolkit for Webino developers.
 
 ## Requirements
 
-- Latest stable [Node.js](http://nodejs.org/)
-- [PHP](http://php.net/) >= 5.6
 - [Git](http://git-scm.com) & [GitFlow](https://github.com/nvie/gitflow)
+- [Node.js](http://nodejs.org/) 0.10
+- [PHP](http://php.net/) 5.*
 - [Graphviz](http://www.graphviz.org)
-- RecordMyDesktop (http://recordmydesktop.sourceforge.net/)
+- [Selenium](http://selenium-release.storage.googleapis.com/index.html?path=2.53/) 2.53
+- [Firefox](https://ftp.mozilla.org/pub/firefox/releases/46.0.1/linux-x86_64/en-US/) 46.0.1
+- [RecordMyDesktop](http://recordmydesktop.sourceforge.net/)
 
 *NOTE: Consider to use a [nvm](https://github.com/creationix/nvm) e.g. `nvm install 0.10` to install Node.js.*
 
@@ -25,8 +27,12 @@ Application and module development toolkit for Webino developers.
 - Source code analysis
 - API generation
 - Testing environment configuration
-- Package unit & acceptance testing
+- Unit & acceptance testing
 - Acceptance testing video recording
+- Firefox browser testing by default
+
+*NOTE: User acceptance testing automation is powered by Firefox browser out of the box. Using Chrome or other
+ browsers requires setting driver system variable, which is not currently implemented.*
 
 ## Installation
 
@@ -116,8 +122,10 @@ Publish new module to a remote repository
 
 ## TODO
 
+- Upgrade to PHP 7
+- Upgrade to Selenium 3
 - Add webino-generator module
 
 ## More information
 
-Read more on [How to develop Webino modules](https://github.com/webino/Webino/wiki/How-to-develop-Webino-modules)
+Read more on [How to develop Webino modules](https://github.com/webino/Webino/wiki/How-to-develop-Webino-module)
