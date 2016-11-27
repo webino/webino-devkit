@@ -10,6 +10,7 @@ Application and module development toolkit for Webino developers.
 
 ## Requirements
 
+- [Ubuntu](https://www.ubuntu.com/) 15.10 | 14.04 | 12.04 (wget 1.14)
 - [Git](http://git-scm.com) & [GitFlow](https://github.com/nvie/gitflow)
 - [Node.js](http://nodejs.org/) 0.10
 - [PHP](http://php.net/) >=5.6
