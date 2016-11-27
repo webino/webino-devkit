@@ -20,6 +20,7 @@ echo 'Test webino module development'
 # TODO use WebinoSkeletonModule instead
 module=WebinoDev
 cd /tmp && git clone https://github.com/webino/${module}.git
-cd /tmp/${module} && webino init && webino test && webino analyze && webino api
+cd /tmp/${module} && webino init && webino test && webino analyze && webino api && exit 0
 
 # TODO add more tests (module init/update, testing, generators, etc.)
+exit 1

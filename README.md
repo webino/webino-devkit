@@ -12,7 +12,7 @@ Application and module development toolkit for Webino developers.
 
 - [Git](http://git-scm.com) & [GitFlow](https://github.com/nvie/gitflow)
 - [Node.js](http://nodejs.org/) 0.10
-- [PHP](http://php.net/) 5.*
+- [PHP](http://php.net/) >=5.6
 - [Graphviz](http://www.graphviz.org)
 - [Selenium](http://selenium-release.storage.googleapis.com/index.html?path=2.53/) 2.53
 - [Firefox](https://ftp.mozilla.org/pub/firefox/releases/46.0.1/linux-x86_64/en-US/) 46.0.1
@@ -129,3 +129,9 @@ Publish new module to a remote repository
 ## More information
 
 Read more on [How to develop Webino modules](https://github.com/webino/Webino/wiki/How-to-develop-Webino-module)
+
+## Addendum
+
+Please, if you are interested in this development kit report any issues and don't hesitate to contribute.
+
+[Report a bug](https://github.com/webino/webino-devkit/issues) | [Fork me](https://github.com/webino/webino-devkit)
