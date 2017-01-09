@@ -106,12 +106,11 @@ case "${1:-''}" in
         # Stops selenium & Xvfb for specified port
         echo "Stopping Selenium on port $port..."
         stop_selenium
+        rm -f $(lock_file)
 
         # Stops Xvfb when no selenium is running
         [[ -z $(ls $lock 2> /dev/null) ]] && kill_xvfb
-
-        # Remove lock files with delay
-        sleep 1800 && rm -f $(lock_file) && rm -f '/tmp/.X'$port'-lock' &
+        rm -f '/tmp/.X'$port'-lock'
         exit 0
     ;;
     'kill')
