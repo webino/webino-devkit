@@ -1,6 +1,7 @@
 {
     "github": {
-        "user": "CHANGEME"
+        "vendor": "CHANGEME",
+        "user":   "CHANGEME"
     },
     "authentication": {
         "identity":   "CHANGEME",
