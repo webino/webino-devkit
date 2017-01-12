@@ -10,7 +10,7 @@ before_install:
     && sudo apt-get install -f"
   - wget https://deb.nodesource.com/setup_4.x -qO- | sudo bash
   - sudo apt-get install -y nodejs graphviz
-  - printf '\n' | pecl install -f 'mailparse-'$(php -r "echo (-1 === version_compare(phpversion(), '7.0.0') ? '2.1.6' : '3.0.2');")
+  - "printf '\n' | pecl install -f 'mailparse-'$(php -r \"echo (-1 === version_compare(phpversion(), '7.0.0') ? '2.1.6' : '3.0.2');\")"
 install:
   - sudo npm install -g --unsafe-perm .
   - sudo rm -rf ~/.composer/cache
