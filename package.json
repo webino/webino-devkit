@@ -20,12 +20,12 @@
             "url":  "http://github.com/webino/webino-devkit/blob/develop/LICENSE"
         }
     ],
+    "scripts": {
+        "postinstall": "grunt setup"
+    },
     "bin": {
         "webino":   "bin/webino",
         "selenium": "bin/selenium"
-    },
-    "scripts": {
-        "postinstall": "grunt setup"
     },
     "engines": {
         "node": ">=0.10"
@@ -50,6 +50,7 @@
         "grunt-string-replace": "1.*",
         "grunt-gh-pages": "0.9.*",
         "priorityqueuejs": "0.2.*",
-        "shelljs": "~0.3"
+        "shelljs": "0.3.*",
+        "prompt": "1.*"
     }
 }
