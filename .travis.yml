@@ -6,10 +6,9 @@ matrix:
   allow_failures:
     - php: 7.0
 before_install:
-  - "echo 'Updating Ubuntu 12.04 wget to 1.14 with SNI' && wget http://ppa.launchpad.net/nathan-renniewaldock/ppa/ubuntu/pool/main/w/wget/wget_1.14-1~ppa1~precise_amd64.deb && sudo dpkg -i wget_1.14-1~ppa1~precise_amd64.deb
-    && sudo apt-get install -f"
   - wget https://deb.nodesource.com/setup_4.x -qO- | sudo bash
   - sudo apt-get install -y nodejs graphviz
+  - echo "$(which php) /usr/bin/php" | sudo xargs ln -s
   - "printf '\n' | pecl install -f 'mailparse-'$(php -r \"echo (-1 === version_compare(phpversion(), '7.0.0') ? '2.1.6' : '3.0.2');\")"
 install:
   - sudo npm install -g --unsafe-perm .

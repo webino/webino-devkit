@@ -152,6 +152,7 @@ Publish new module to the GitHub repository
 - Upgrade to PHP 7
 - Upgrade to Selenium 3
 - Add webino-generator module
+- Get rid of install with unsafe-perm
 
 
 ## More information
