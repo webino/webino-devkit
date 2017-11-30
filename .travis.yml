@@ -1,17 +1,17 @@
 language: php
 php:
-  - 5.6
-  - 7.0
-matrix:
-  allow_failures:
-    - php: 7.0
+  - 7.1
 before_install:
   - wget https://deb.nodesource.com/setup_4.x -qO- | sudo bash
   - sudo apt-get install -y nodejs graphviz
   - echo "$(which php) /usr/bin/php" | sudo xargs ln -s
-  - "printf '\n' | pecl install -f 'mailparse-'$(php -r \"echo (-1 === version_compare(phpversion(), '7.0.0') ? '2.1.6' : '3.0.2');\")"
+  - "printf '\n' | pecl install -f mailparse-3.0.2"
 install:
   - sudo npm install -g --unsafe-perm .
   - sudo rm -rf ~/.composer/cache
 script:
   - ./tests/bootstrap
+env:
+  global:
+    - GH_REF=github.com/webino/webino-devkit
+    - secure: gvmpQwsGGPAZOCBeI2OqC2NB5LO9m0QidZmJitGrdG9u6vV9pvyw4d6p8tFxKEz3yxht3+CsokVuTtiy+EXT717fvyQl5ICe5E4MlO/WGLvzNGD0CFdm5PSbdoIWvu8HHQVuxn9B4andDOM+lbAGzNHNWBoZbwdAtQernoUnDSU=
