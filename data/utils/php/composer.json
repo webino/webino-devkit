@@ -17,7 +17,7 @@
         "phpunit/phpunit": "4.*",
         "mikey179/vfsStream": "1.*",
         "nette/tester": "1.*",
-        "smalot/pdfparser": "0.9.*",
+        "smalot/pdfparser": "0.*",
         "rhumsaa/uuid": "2.7.*"
     }
 }
