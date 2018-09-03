@@ -6,6 +6,7 @@
         "mayflower/php-codebrowser": "*",
         "pdepend/pdepend": "2.*",
         "phpdocumentor/phpdocumentor": "2.*",
+        "zendframework/zend-cache": "2.7.2",
         "twig/twig": "1.27.*",
         "phploc/phploc": "*",
         "phpmd/phpmd": "2.*",
