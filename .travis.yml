@@ -15,3 +15,6 @@ env:
   global:
     - GH_REF=github.com/webino/webino-devkit
     - secure: gvmpQwsGGPAZOCBeI2OqC2NB5LO9m0QidZmJitGrdG9u6vV9pvyw4d6p8tFxKEz3yxht3+CsokVuTtiy+EXT717fvyQl5ICe5E4MlO/WGLvzNGD0CFdm5PSbdoIWvu8HHQVuxn9B4andDOM+lbAGzNHNWBoZbwdAtQernoUnDSU=
+notifications:
+  email:
+  - syslog@webino.sk
