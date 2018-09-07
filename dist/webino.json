@@ -11,5 +11,6 @@
         "user":     "CHANGEME",
         "password": "CHANGEME"
     },
+    "scripts": [],
     "modules": []
 }
