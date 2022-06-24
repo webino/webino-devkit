@@ -1,7 +1,7 @@
 {
     "name":        "webino-devkit",
     "description": "Webino Development Kit",
-    "version":     "0.14.4",
+    "version":     "0.14.5",
     "author":      "Peter Bačinský, Webino, s. r. o. (https://webino.sk/)",
     "homepage":    "https://webino.sk/",
     "keywords":    ["webino", "development", "kit"],
