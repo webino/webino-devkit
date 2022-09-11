@@ -9,6 +9,7 @@ lock=/tmp/selenium/port-*.lock
 log=/tmp/selenium/port-*.log
 port=${PORT-'4444'}
 no_xvfb=${X-''}
+verbose=${V-''}
 
 # Functions
 
@@ -16,9 +17,10 @@ help () {
     echo ''
     echo ' Usage:'
     echo ''
-    echo ' X=0 '$BASH_SOURCE' port|start|stop|kill'
+    echo ' X=0 V=1 '$BASH_SOURCE' port|start|stop|kill|daemon'
     echo ''
     echo ' X=0        Disable Virtual Frame Buffer'
+    echo ' V=1        Verbose'
     echo ''
 }
 
@@ -54,6 +56,32 @@ kill_recording () {
     local pid=$(ps aux | grep '[r]ecordmydesktop' | awk '{print $2}')
     [[ -n $pid ]] && echo 'Stopping recording' && kill $pid 2> /dev/null
     sleep 1
+}
+
+selenium_daemon () {
+    while true
+    do
+
+       for f in *selenium.start*
+       do
+         if [[ -f "$f" ]]; then
+            [[ $verbose ]] && echo $f
+
+            ftime=$(($(stat -c '%Z' $f)+60))
+            if [[ $ftime -le $(date +%s) ]]; then
+                [[ $verbose ]] && echo Too old!
+            else
+                [[ $verbose ]] && echo Starting selenium!
+                port=${f:0:4}
+                export PORT=$port
+                selenium start &>/dev/null
+            fi
+            rm $f
+         fi
+       done
+       sleep .25
+
+    done
 }
 
 # Commands
@@ -121,6 +149,13 @@ case "${1:-''}" in
         kill_xvfb
         rm -f $lock
         rm -f $log
+        exit 0
+    ;;
+    'daemon')
+        dir='/tmp/selenium/daemon'
+        mkdir -p $dir
+        cd $dir
+        selenium_daemon
         exit 0
     ;;
     *)
