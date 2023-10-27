@@ -18,7 +18,7 @@
         "phpunit/phpunit": "4.8.*",
         "phpunit/php-timer": "1.0.*",
         "mikey179/vfsstream": "1.*",
-        "nette/tester": "1.*",
+        "webino/nette-tester": "1.7.*",
         "smalot/pdfparser": "0.*",
         "rhumsaa/uuid": "2.7.*"
     }
